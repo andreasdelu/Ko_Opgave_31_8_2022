@@ -1,0 +1,377 @@
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	max-width: 100vw;
+}
+
+#wrapper{
+	max-width: 900px;
+	margin: 0 auto;
+}
+
+h1, h2{
+	text-align: center;
+}
+
+#guitar-list {
+	list-style: none;
+	padding: 0;
+}
+#guitar-list li {
+	padding: 20px 20px;
+	margin-bottom: 20px;
+	border-radius: 25px;
+	box-shadow: 0 0 20px -5px rgba(0, 0, 0, 0.235);
+}
+
+.tablelist {
+	border-collapse: collapse;
+	width: 100%;
+}
+.tablelist button{
+	cursor: pointer;
+}
+
+.tablelist td,
+.tablelist th {
+	border: 1px solid #ddd;
+	padding: 8px;
+	text-transform: capitalize;
+	text-align: center;
+}
+
+.tablelist tr:nth-child(even) {
+	background-color: #f2f2f2;
+}
+
+.tablelist tr:hover {
+	background-color: #ddd;
+}
+
+.tablelist th {
+	padding-top: 12px;
+	padding-bottom: 12px;
+	text-align: center;
+	background-color: #04aa6d;
+	color: white;
+}
+
+.searchform {
+	padding: 10px;
+}
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 1rem;
+}
+
+#advancedSearch{
+	margin-bottom: 1rem;
+	width: fit-content;
+	
+}
+
+#advancedSearch summary{
+	cursor: pointer;
+}
+
+#advancedForm{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr 1fr;
+	background-color: rgb(237, 237, 237);
+	height: fit-content;
+}
+
+
+
+#advancedForm input{
+	margin: 0.1rem 0.5rem;
+	font-size: 0.9rem;
+	border-radius: 9999px;
+	border: 2px solid rgb(118, 118, 118);
+	padding-left: 5px;
+	height: 80%;
+}
+
+#advancedForm button{
+	margin: 1rem 0.5rem;
+	padding: 0.5em 1em;
+	width: fit-content;
+	background-color: #04aa6d;
+	border: none;
+	color: white;
+	font-weight: bold;
+	font-size: 0.9rem;
+	cursor: pointer;
+}
+
+#advancedForm button:hover{
+	opacity: 0.8;
+}
+
+.inputField,
+.button {
+	padding: 10px;
+	border-radius: 5px;
+}
+
+.button:hover {
+	cursor: pointer;
+	background-color: rgb(211, 206, 206);
+}
+
+#dialogForm {
+	width: 300px;
+	border: 0;
+	box-shadow: 10px 10px 5px gray;
+}
+
+.dialogField {
+	width: 95%;
+}
+
+.dialogBtnsPanel {
+	display: flex;
+	justify-content: space-between;
+}
+
+label {
+	display: block;
+	margin-top: 15px;
+	margin-bottom: 5px;
+}
+
+#guitarDialog {
+	width: 25%;
+}
+
+/* Source: https://www.w3schools.com/howto/howto_js_snackbar.asp */
+
+#snackbar {
+	visibility: hidden;
+	min-width: 250px;
+	margin-left: -125px;
+	background-color: #333;
+	color: #fff;
+	text-align: center;
+	border-radius: 2px;
+	padding: 16px;
+	position: fixed;
+	z-index: 1;
+	left: 50%;
+	bottom: 30px;
+	font-size: 17px;
+}
+
+#snackbar.show {
+	visibility: visible;
+	-webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+	animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+	from {
+		bottom: 0;
+		opacity: 0;
+	}
+	to {
+		bottom: 30px;
+		opacity: 1;
+	}
+}
+
+@keyframes fadein {
+	from {
+		bottom: 0;
+		opacity: 0;
+	}
+	to {
+		bottom: 30px;
+		opacity: 1;
+	}
+}
+
+@-webkit-keyframes fadeout {
+	from {
+		bottom: 30px;
+		opacity: 1;
+	}
+	to {
+		bottom: 0;
+		opacity: 0;
+	}
+}
+
+@keyframes fadeout {
+	from {
+		bottom: 30px;
+		opacity: 1;
+	}
+	to {
+		bottom: 0;
+		opacity: 0;
+	}
+}
+
+.buttonContainer{
+	width: fit-content;
+}
+
+.addBtn{
+	background-color: #04aa6d!important;
+
+}
+
+input{
+	height: 90%;
+	border: 2px solid rgb(176, 176, 176);
+	border-radius: 999px;
+	padding-left: 5px;
+}
+
+dialog{
+	position: fixed;
+	margin: 0;
+	padding: 1em 2em;
+	z-index: 9999;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	border: none;
+	border-radius: 20px;
+}
+
+#addDialog{
+	width: 40%;
+	max-width: 400px;
+}
+
+#addDialog label{
+	width: 80%;
+	margin: 5px auto;
+}
+
+#addDialog input{
+	width: 100%;
+	height: 1.3rem;
+	margin: 5px auto;
+	font-size: 0.9rem;
+}
+
+#confirmDelete{
+	background-color: white;
+}
+
+#bgBlur{
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(0, 0, 0, 0.3);
+}
+
+.buttonDialog {
+	display: block;
+	width: fit-content;
+	margin: 10px auto;
+}
+
+.btn{
+	border: none;
+	background-color: rgb(0, 0, 0);
+	padding: 0.5em 1em;
+	margin: 0 0.5em;
+	font-weight: bold;
+	cursor: pointer;
+	color: white;
+	border-radius: 9999px;
+}
+
+.btn:hover{
+	opacity: 0.6;
+}
+
+.dangerBtn{
+	outline: 2px solid red;
+	background-color: red;
+	color: white;
+}
+
+.dangerBtn:hover{
+	background-color: white;
+	color: red;
+}
+
+.cancelDialog{
+	outline: 2px solid black;
+	background-color: white;
+	color: black;
+}
+
+
+#cardContainer{
+	width: 100%;
+	height: fit-content;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.cowCard{
+	height: 380px;
+	width: 250px;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	box-shadow: 0 0 20px -5px rgba(0, 0, 0, 0.17);
+	border-radius: 1em;
+	margin: 1rem;
+	position: relative;
+	transition: 0.3s;
+}
+
+.cowCard:hover{
+	transform: scale(1.01);
+}
+
+.cowCard .cowImg{
+	width: 100%;
+	
+}
+
+.cardInfo{
+	background-color: white;
+	width: 100%;
+	text-transform: capitalize;
+	position: absolute;
+	left: 0;
+	top: 150px;
+
+}
+
+.cowCard .info{
+	width: 80%;
+	display: flex;
+	justify-content: space-between;
+	margin: 1rem auto;
+}
+
+.killBtn{
+	display: block;
+	margin: 0.5rem auto 1rem auto;
+	border: 2px solid red;
+	border-radius: 9999px;
+	padding: 0.3em 1em;
+	color: white;
+	font-weight: bold;
+	background-color: red;
+	cursor: pointer;
+}
+
+.killBtn:hover{
+	opacity: 0.7;
+}

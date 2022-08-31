@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rick's guitar inventory</title>
+    <link rel="stylesheet" href="styles/mystyle.css">
+</head>
+
+<body>
+    <div id="wrapper">
+        <h1>Rick's Cow Farm</h1>
+        <h2>Cows: null/null</h2>
+        <div class="header">
+            <div class="buttonContainer">
+                <button style="margin: 0 0em!important;" id="addGuitar" class="addBtn btn">Add Cow</button>
+                <button style="margin: 0 0.5em;" id="showAll" class="btn">Show All</button>
+            </div>
+            <form id="serialNumberSearch">
+                <input class="searchInput" type="text" name="serialNumber" id="serialNumberInput" placeholder="Registration Number">
+                <button style="margin: 0 0.5em;" class="btn" type="submit">Search</button>
+            </form>
+        </div>
+    
+        <details id="advancedSearch">
+            <summary>Advanced Search</summary>
+            <form id="advancedForm">
+                <label for="builder"><input id="builder" type="text" placeholder="Booth"></label>
+                <label for="model"><input id="model" type="text" placeholder="Race"></label>
+                <label for="type"><input id="type" type="text" placeholder="Birthday"></label>
+                <label for="topwood"><input id="topwood" type="text" placeholder="Milk Prod. Last Year"></label>
+                <button class="addBtn btn" type="submit">Search</button>
+            </form>
+        </details>
+        <div id="cardContainer">
+            <div class="cowCard">
+                <div data-img="mine.webp" class="cowImg"></div>
+                <div class="cardInfo">
+                    <p class="info"><b>Reg:</b> 042-2827</p>
+                    <p class="info"><b>Booth:</b> 0441</p>
+                    <p class="info"><b>Race:</b> Cwaf</p>
+                    <p class="info"><b>Birthday:</b> 6-1-2003</p>
+                    <p class="info"><b>Milk Prod:</b> 9478 L</p>
+                    <button class="killBtn">Kill</button>
+
+                </div>
+            </div>
+            <div class="cowCard">
+                <div data-img="mine.webp" class="cowImg"></div>
+                <div class="cardInfo">
+                    <p class="info"><b>Reg:</b> 042-2827</p>
+                    <p class="info"><b>Booth:</b> 0441</p>
+                    <p class="info"><b>Race:</b> Cwaf</p>
+                    <p class="info"><b>Birthday:</b> 6-1-2003</p>
+                    <p class="info"><b>Milk Prod:</b> 9478 L</p>
+                    <button class="killBtn">Kill</button>
+
+                </div>
+            </div>
+            <div class="cowCard">
+                <div data-img="mine.webp" class="cowImg"></div>
+                <div class="cardInfo">
+                    <p class="info"><b>Reg:</b> 042-2827</p>
+                    <p class="info"><b>Booth:</b> 0441</p>
+                    <p class="info"><b>Race:</b> Cwaf</p>
+                    <p class="info"><b>Birthday:</b> 6-1-2003</p>
+                    <p class="info"><b>Milk Prod:</b> 9478 L</p>
+                    <button class="killBtn">Kill</button>
+
+                </div>
+            </div>
+            <div class="cowCard">
+                <div data-img="mine.webp" class="cowImg"></div>
+                <div class="cardInfo">
+                    <p class="info"><b>Reg:</b> 042-2827</p>
+                    <p class="info"><b>Booth:</b> 0441</p>
+                    <p class="info"><b>Race:</b> Cwaf</p>
+                    <p class="info"><b>Birthday:</b> 6-1-2003</p>
+                    <p class="info"><b>Milk Prod:</b> 9478 L</p>
+                    <button class="killBtn">Kill</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <dialog id="confirmDelete">
+        <h3>Do you want to kill this cow?</h3>
+        <div class="buttonDialog">
+            <button id="deleteGuitar" class="dangerBtn btn">Kill</button>
+            <button id="cancelDialog" class="cancelDialog btn">Cancel</button>
+        </div>
+    </dialog>
+
+    <dialog id="addDialog">
+        <h3 style="text-align: center ;">Add Cow:</h3>
+        <form id="addGuitarForm">
+            <label for="addserial"><input required id="addserial" type="text" placeholder="Registration Number"></label>
+            <label for="addbuilder"><input required id="addbuilder" type="text" placeholder="Booth"></label>
+            <label for="addmodel"><input required id="addmodel" type="text" placeholder="Race"></label>
+            <label for="addtype"><input required id="addtype" type="text" placeholder="Birthday"></label>
+            <label for="addtopwood"><input required id="addtopwood" type="text" placeholder="Milk Prod. Last Year"></label>
+            <button style="display: block; margin: 2em auto 1em auto;" class="addBtn btn" type="submit">Add</button>
+            <button style="display: block; margin: 1em auto 1em auto; font-size: 0.7rem;" type="reset" class="cancelDialog btn">Cancel</button>
+        </form>
+    </dialog>
+
+    <dialog id="errorDialog">
+        <h3 style="text-align: center ;"></h3>
+        <button style="display: block; margin: 2em auto 1em auto;" class="btn" type="submit">Okay</button>
+    </dialog>
+
+
+
+    <script type="module">
+        import Model from "./models/model.js"
+        import Controller from "./controllers/controller.js"
+        import View from "./views/view.js"
+
+        window.onload = () => {
+            const model = new Model();
+            const controller = new Controller();
+            const view = new View(controller);
+
+            controller.initialize(model, view);
+            controller.getAllCows();
+        }
+    </script>
+</body>
+
+</html>
